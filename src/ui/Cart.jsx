@@ -4,6 +4,7 @@ import { useCart } from "../contexts/CartContext";
 import CartEl from "../data/CartEl";
 import { FaTrash } from "react-icons/fa";
 import EmptyCart from "./EmptyCart";
+import toast from "react-hot-toast";
 
 function Cart() {
   const { isCartOpen, cart, dispatch, totalPrice } = useCart();
@@ -11,6 +12,28 @@ function Cart() {
   const { id } = cart;
 
   const cartRevealAnim = isCartOpen ? "translate-x-0" : "translate-x-full";
+
+  function handleClearCart() {
+    dispatch({ type: "clearCart" });
+    toast.success("Pomyślnie opróżniono koszyk 🗑️", {
+      style: {
+        padding: "1rem",
+        backgroundColor: "#3f3f46",
+        color: "#f9fafb",
+      },
+    });
+  }
+
+  function makeOrder() {
+    dispatch({ type: "clearCart" });
+    toast.success("Zamówienie dostarczymy do 45 minut", {
+      style: {
+        padding: "1rem",
+        backgroundColor: "#3f3f46",
+        color: "#f9fafb",
+      },
+    });
+  }
 
   if (cart.length === 0) return <EmptyCart />;
 
@@ -38,7 +61,7 @@ function Cart() {
         <div className="flex justify-around p-4 gap-5 sm:gap-0">
           <p className="text-zinc-300 font-main">Do zapłaty:</p>
           <span className="text-amber-300 font-main">{totalPrice} złoty</span>
-          <button onClick={() => dispatch({ type: "clearCart" })}>
+          <button onClick={handleClearCart}>
             <IconContext.Provider value={{ size: "1.2rem", color: "#d4d4d8" }}>
               <FaTrash />
             </IconContext.Provider>
@@ -47,7 +70,7 @@ function Cart() {
 
         <div className="p-8 flex justify-center">
           <button
-            onClick={() => dispatch({ type: "clearCart" })}
+            onClick={makeOrder}
             className="mb-8 font-main text-xl font-semibold w-64  sm:w-full sm:h-10 text-zinc-200 bg-emerald-700 rounded-md shadow-2xl  flex items-center justify-center  hover:bg-emerald-500 "
           >
             Zamów

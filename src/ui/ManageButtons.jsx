@@ -7,7 +7,7 @@ function ManageButtons() {
 
   if (isCartOpen) return null;
   return (
-    <div className="flex flex-col fixed top-[35rem] right-0 m-4 z-50">
+    <div className="flex flex-col fixed top-1/2 sm:top-[35rem] right-0 m-4 z-50">
       <CartButton />
       <ButtonToTop />
     </div>

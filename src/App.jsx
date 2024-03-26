@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 import ManageButtons from "./ui/ManageButtons";
 import Cart from "./ui/Cart";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <Footer></Footer>
       <ManageButtons />
       <Cart />
+      <Toaster />
     </div>
   );
 }

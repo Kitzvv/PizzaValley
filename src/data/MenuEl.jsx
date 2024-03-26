@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useCart } from "../contexts/CartContext";
 
 export function MenuEl({ pizzaObj }) {
@@ -14,6 +15,13 @@ export function MenuEl({ pizzaObj }) {
     };
     dispatch({ type: "addToCart", payload: newItem });
     dispatch({ type: "calculateTotalPrice" });
+    toast.success("Dodano do koszyka", {
+      style: {
+        padding: "1rem",
+        backgroundColor: "#3f3f46",
+        color: "#f9fafb",
+      },
+    });
   }
 
   console.log(cart);
