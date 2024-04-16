@@ -6,10 +6,10 @@ function Contact() {
   return (
     <section className="bg-zinc-700 min-h-[54rem]" id="contact">
       <div className="flex items-center justify-center flex-col mb-12">
-        <p className="uppercase text-xl sm:text-3xl md:text-5xl  text-emerald-400 font-addition mt-10 mb-4">
+        <p className="uppercase text-xl sm:text-3xl md:text-5xl  text-emerald-400 font-addition mt-10 py-4">
           Skontaktuj sie z nami!
         </p>
-        <p className="uppercase font-main text-xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-200 mb-4">
+        <p className="uppercase font-main text-xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-200 py-2">
           kontakt
         </p>
         <div className="h-1 w-20 bg-emerald-400"></div>

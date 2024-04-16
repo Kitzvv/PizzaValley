@@ -9,8 +9,6 @@ import toast from "react-hot-toast";
 function Cart() {
   const { isCartOpen, cart, dispatch, totalPrice } = useCart();
 
-  const { id } = cart;
-
   const cartRevealAnim = isCartOpen ? "translate-x-0" : "translate-x-full";
 
   function handleClearCart() {

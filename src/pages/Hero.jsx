@@ -5,7 +5,7 @@ function Hero() {
   const { scrollToSection } = useSmoothScroll();
 
   return (
-    <section
+    <header
       className="relative bg-cover bg-center bg-[url('/public/Hero.jpg')]"
       id="hero"
     >
@@ -25,7 +25,7 @@ function Hero() {
           Menu
         </a>
       </div>
-    </section>
+    </header>
   );
 }
 
